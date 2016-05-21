@@ -264,10 +264,6 @@ public interface IgniteCache<K, V> extends javax.cache.Cache<K, V>, IgniteAsyncS
      *
      * @param keys Keys for lock.
      * @return New lock instance associated with passed key.
-     * @see Lock#lock()
-     * @see Lock#tryLock(long, TimeUnit)
-     */
-    public Lock lockAll(Collection<? extends K> keys);
 
     /**
      * Checks if specified key is locked.
