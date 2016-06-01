@@ -506,7 +506,6 @@ public class IgniteConfiguration {
         discoStartupDelay = cfg.getDiscoveryStartupDelay();
         failureDetectionTimeout = cfg.getFailureDetectionTimeout();
         gridName = cfg.getGridName();
-        hadoopCfg = cfg.getHadoopConfiguration();
         instanceName = cfg.getInstanceName();
         igfsCfg = cfg.getFileSystemConfiguration();
         igfsPoolSize = cfg.getIgfsThreadPoolSize();
@@ -566,6 +565,7 @@ public class IgniteConfiguration {
      *
      * @return Optional grid name. Can be {@code null}, which is default grid name, if
      *      non-default grid name was not provided.
+     * @deprecated Use {@link #getInstanceName()} instead.
      */
     @Deprecated
     public String getGridName() {
@@ -630,6 +630,7 @@ public class IgniteConfiguration {
      * @param gridName Grid name to set. Can be {@code null}, which is default
      *      grid name.
      * @return {@code this} for chaining.
+     * @deprecated Use {@link #setInstanceName(String)} instead.
      */
     @Deprecated
     public IgniteConfiguration setGridName(String gridName) {
@@ -638,6 +639,13 @@ public class IgniteConfiguration {
         return this;
     }
 
+    /**
+     * Sets of local instance name. Note that{@code null} is a default local instance name.
+     *
+     * @param instanceName Local instance name to set. Can be {@code null}. which is default
+     *                          local instance name.
+     * @return {@code this} for chaining.
+     */
     public IgniteConfiguration setInstanceName(String instanceName) {
         this.instanceName = instanceName;
 
