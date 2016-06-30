@@ -840,16 +840,16 @@ public class WebSessionSelfTest extends GridCommonAbstractTest {
      *
      * @param port Port number.
      * @param cfg Configuration.
-     * @param gridName Grid name.
+     * @param instanceName Instance name.
      * @param servlet Servlet.
      * @return Server.
      * @throws Exception In case of error.
      */
-    private Server startServerWithLoginService(int port, @Nullable String cfg, @Nullable String gridName, HttpServlet servlet)
+    private Server startServerWithLoginService(int port, @Nullable String cfg, @Nullable String instanceName, HttpServlet servlet)
             throws Exception {
         Server srv = new Server(port);
 
-        WebAppContext ctx = getWebContext(cfg, gridName, keepBinary(), servlet);
+        WebAppContext ctx = getWebContext(cfg, instanceName, keepBinary(), servlet);
 
         HashLoginService hashLoginService = new HashLoginService();
         hashLoginService.setName("Test Realm");
