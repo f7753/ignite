@@ -569,15 +569,15 @@ public class IgniteConfiguration {
      */
     @Deprecated
     public String getGridName() {
-        return gridName;
+        return instanceName;
     }
 
     /**
-     * Gets optional local instance name. Returns {@code null} if non-default local instance
+     * Gets optional instance name. Returns {@code null} if non-default local instance
      * name was not provided.
      *
-     * @return Optional local instance name. Can be {@code null}, which is default local
-     * instance name, if non-default local instance name was not provided.
+     * @return Optional instance name. Can be {@code null}, which is default local
+     * instance name, if non-default instance name was not provided.
      */
     public String getInstanceName() {
         return instanceName;
@@ -635,19 +635,21 @@ public class IgniteConfiguration {
     @Deprecated
     public IgniteConfiguration setGridName(String gridName) {
         this.gridName = gridName;
+        this.instanceName = gridName;
 
         return this;
     }
 
     /**
-     * Sets of local instance name. Note that{@code null} is a default local instance name.
+     * Sets of instance name. Note that{@code null} is a default local instance name.
      *
-     * @param instanceName Local instance name to set. Can be {@code null}. which is default
-     *                          local instance name.
+     * @param instanceName Instance name to set. Can be {@code null}. which is default
+     *                          instance name.
      * @return {@code this} for chaining.
      */
     public IgniteConfiguration setInstanceName(String instanceName) {
         this.instanceName = instanceName;
+        this.gridName = instanceName;
 
         return  this;
     }
