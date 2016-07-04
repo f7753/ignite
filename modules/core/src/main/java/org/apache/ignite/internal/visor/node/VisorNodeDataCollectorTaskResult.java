@@ -101,11 +101,17 @@ public class VisorNodeDataCollectorTaskResult implements Serializable, LessNamin
 
     /**
      * @return Nodes grid names.
+     *
+     * @deprecated Use {@link #instanceNames()} instead.
      */
+    @Deprecated
     public Map<UUID, String> gridNames() {
         return instanceNames;
     }
 
+    /**
+     * @return Nodes grid instances.
+     */
     public Map<UUID, String> instanceNames() {
         return instanceNames;
     }
